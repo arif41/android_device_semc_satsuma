@@ -49,3 +49,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=tiwlan0 \
     ro.sf.lcd_density=160 \
     wifi.hotspot.ti=1
+
+# Theme Selection
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.themeId=JellyBean \
+    persist.sys.themePackageName=com.achep.theme.JellyBean
+
+$(call inherit-product-if-exists, vendor/samsung/cooperve/cooperve-vendor.mk)
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/gingerdx-common/prebuilt/system,system)  
